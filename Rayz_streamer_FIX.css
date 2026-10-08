@@ -1,0 +1,32 @@
+/* RAYZ STREAMER — surcouche visuelle GamePad Viewer.
+   À utiliser avec le paramètre editcss= et un skin natif (s=1).
+   Ne remplace pas le skin de base et ne modifie pas les commandes. */
+.controller.edit {
+  position: relative;
+  filter: drop-shadow(0 0 10px rgba(50,245,255,.45)) drop-shadow(0 0 18px rgba(168,77,255,.30));
+}
+.controller.edit::after {
+  content: "RAYZ";
+  position: absolute;
+  z-index: 100;
+  top: 19%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f9ffff;
+  font: italic 900 26px/1 Impact, "Arial Black", sans-serif;
+  letter-spacing: .18em;
+  text-shadow: 0 0 4px #32f5ff, 0 0 11px #32f5ff, 2px 2px 0 #a84dff, 0 0 24px #a84dff;
+  pointer-events: none;
+}
+.controller.edit .stick,
+.controller.edit .button,
+.controller.edit .bumper,
+.controller.edit .trigger,
+.controller.edit .face,
+.controller.edit .dpad {
+  filter: drop-shadow(0 0 3px rgba(50,245,255,.65));
+}
+.controller.edit .pressed,
+.controller.edit .active {
+  filter: drop-shadow(0 0 7px #32f5ff) drop-shadow(0 0 12px #ff46ce);
+}
