@@ -1,0 +1,80 @@
+/*
+  RAYZ__TV OVERLAY
+  À utiliser avec le skin Hunter Killer déjà chargé via css=
+  et ce fichier en surcouche via editcss=
+*/
+
+html, body {
+  background: transparent !important;
+}
+
+.controller.custom {
+  position: relative;
+  isolation: isolate;
+  filter:
+    drop-shadow(0 0 8px rgba(66,243,255,0.18))
+    drop-shadow(0 0 18px rgba(157,98,255,0.16));
+}
+
+.controller.custom::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 9.6%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 14%;
+  border-radius: 22px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.10) 0%,
+    rgba(255,255,255,0.03) 10%,
+    rgba(15,19,28,0.58) 55%,
+    rgba(7,10,16,0.70) 100%);
+  border: 1px solid rgba(87,169,255,0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.14),
+    0 0 10px rgba(66,243,255,0.08),
+    0 0 20px rgba(157,98,255,0.06);
+  pointer-events: none;
+}
+
+.controller.custom::after {
+  content: "Rayz__Tv";
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 13.2%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: "Arial Black", Impact, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 21px;
+  line-height: 1;
+  letter-spacing: .08em;
+  color: #f7fbff;
+  text-shadow:
+    0 0 1px rgba(255,255,255,0.95),
+    0 0 6px rgba(66,243,255,0.40),
+    0 0 12px rgba(66,243,255,0.24),
+    1px 1px 0 rgba(87,169,255,0.45),
+    0 0 16px rgba(157,98,255,0.22);
+}
+
+.controller.custom .stick,
+.controller.custom .button,
+.controller.custom .bumper,
+.controller.custom .trigger,
+.controller.custom .face,
+.controller.custom .dpad {
+  filter: drop-shadow(0 0 2px rgba(66,243,255,0.20));
+}
+
+.controller.custom .pressed,
+.controller.custom .active {
+  filter:
+    drop-shadow(0 0 6px rgba(66,243,255,0.45))
+    drop-shadow(0 0 10px rgba(157,98,255,0.22));
+}
