@@ -1,0 +1,104 @@
+/*
+  RAYZ__TV PRO — custom overlay for GamePad Viewer
+  Base: Hunter Killer skin by original author (kept intact via @import)
+  Use with: ?p=1&css=https://raw.githubusercontent.com/USER/REPO/main/Rayz__Tv_Pro.css
+*/
+@import url("https://jayraydee.me/Assets/Freeport/Hunter_Killer/Hunter_Killer.css");
+
+:root {
+  --rayz-black: #0a0d14;
+  --rayz-panel: rgba(10, 13, 20, 0.72);
+  --rayz-cyan: #42f3ff;
+  --rayz-blue: #57a9ff;
+  --rayz-violet: #9d62ff;
+  --rayz-white: #f7fbff;
+}
+
+html, body {
+  background: transparent !important;
+}
+
+/* Keep original controller and animations; only add pro styling. */
+.controller.custom {
+  position: relative;
+  isolation: isolate;
+  filter:
+    drop-shadow(0 0 8px rgba(66, 243, 255, 0.22))
+    drop-shadow(0 0 20px rgba(157, 98, 255, 0.20));
+}
+
+/* Professional top plate effect */
+.controller.custom::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 9.5%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 14%;
+  border-radius: 22px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.14) 0%,
+    rgba(255,255,255,0.05) 12%,
+    rgba(15,19,28,0.62) 55%,
+    rgba(7,10,16,0.74) 100%);
+  border: 1px solid rgba(87,169,255,0.20);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.16),
+    0 0 0 1px rgba(66,243,255,0.08),
+    0 0 12px rgba(66,243,255,0.10),
+    0 0 24px rgba(157,98,255,0.08);
+  pointer-events: none;
+}
+
+/* Branding */
+.controller.custom::after {
+  content: "Rayz__Tv";
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 13.1%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: "Arial Black", Impact, Inter, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 21px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: var(--rayz-white);
+  text-shadow:
+    0 0 1px rgba(255,255,255,0.9),
+    0 0 6px rgba(66,243,255,0.45),
+    0 0 12px rgba(66,243,255,0.32),
+    1px 1px 0 rgba(87,169,255,0.55),
+    0 0 18px rgba(157,98,255,0.25);
+}
+
+/* Subtle emphasis on main interactive elements */
+.controller.custom .stick,
+.controller.custom .button,
+.controller.custom .bumper,
+.controller.custom .trigger,
+.controller.custom .face,
+.controller.custom .dpad {
+  filter: drop-shadow(0 0 2px rgba(66,243,255,0.26));
+}
+
+/* Softer professional active state */
+.controller.custom .pressed,
+.controller.custom .active {
+  filter:
+    drop-shadow(0 0 6px rgba(66,243,255,0.55))
+    drop-shadow(0 0 12px rgba(157,98,255,0.28));
+}
+
+/* Small highlight ring on central/system buttons if present */
+.controller.custom .meta,
+.controller.custom .start,
+.controller.custom .back {
+  filter:
+    drop-shadow(0 0 4px rgba(87,169,255,0.35));
+}
