@@ -1,0 +1,60 @@
+/* RAYZ STREAMER — habillage du skin Hunter_Killer pour GamepadViewer
+   Le skin source gère la forme et les animations des commandes.
+   Héberger ce fichier en HTTPS et remplacer css=... par son URL brute. */
+@import url("https://jayraydee.me/Assets/Freeport/Hunter_Killer/Hunter_Killer.css");
+
+:root {
+  --rayz-cyan: #32f5ff;
+  --rayz-violet: #a84dff;
+  --rayz-pink: #ff46ce;
+}
+
+html, body { background: transparent !important; }
+
+/* Préserve tous les sprites et toutes les coordonnées du modèle original. */
+.controller.custom {
+  position: relative;
+  isolation: isolate;
+  filter: drop-shadow(0 0 12px rgba(50,245,255,.5))
+          drop-shadow(0 0 22px rgba(168,77,255,.27));
+}
+
+/* Signature RAYZ : éléments purement décoratifs. */
+.controller.custom::after {
+  content: "RAYZ";
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  top: 17%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: .18em;
+  color: #f9ffff;
+  -webkit-text-stroke: .5px #d2ffff;
+  text-shadow: 0 0 4px var(--rayz-cyan),
+               0 0 11px var(--rayz-cyan),
+               2px 2px 0 var(--rayz-violet),
+               0 0 24px var(--rayz-violet);
+}
+
+/* Lumière froide sur les éléments mobiles, sans modifier les coordonnées. */
+.controller.custom .stick,
+.controller.custom .button,
+.controller.custom .bumper,
+.controller.custom .trigger,
+.controller.custom .face,
+.controller.custom .dpad {
+  filter: drop-shadow(0 0 3px rgba(50,245,255,.65));
+}
+
+/* Surbrillance à l'appui ; le skin original reste responsable de l'animation. */
+.controller.custom .pressed,
+.controller.custom .active {
+  filter: drop-shadow(0 0 7px var(--rayz-cyan))
+          drop-shadow(0 0 12px var(--rayz-pink));
+}
